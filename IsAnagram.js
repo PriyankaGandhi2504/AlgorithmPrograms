@@ -1,3 +1,13 @@
+/*1. An Anagram Detection Example
+a. Desc -> One string is an anagram of another if the second is simply a
+rearrangement of the first. For example, 'heart' and 'earth' are anagrams...
+b. I/P -> Take 2 Strings as Input such abcd and dcba and Check for Anagrams
+c. O/P -> The Two Strings are Anagram or not....
+
+Author Name : Priyanka Gandhi
+Date : 26/09/2019
+*/
+
 const input = require("./Algoutility")
 console.log("Enter 2 Strings")          //asking user to enter 2 string inputs
 var str1 = input.data.input()           //reading data from user

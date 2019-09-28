@@ -1,23 +1,39 @@
-const input = require("./Algoutility")
-var num = input.data.input()
-var arr = input.data.primerange(num)
-console.log("Prime Numbers are: " + JSON.stringify(arr));
-arr = arr.toString()
-arr = arr.split(",")
-var palindromearray = []
-for (i = 0; i <= arr.length - 1; i++) {
-    var palindromearray = input.data.isPalindrome(arr[i])
-}
-console.log("Palindrome Numbers are: " + JSON.stringify(palindromearray))
-console.log(isAnagram(palindromearray));
+/*3. Extend the above program to find the prime numbers that are Anagram and
+Palindrome
 
+Author Name : Priyanka Gandhi
+Date : 26/09/2019
+*/
+
+const input = require("./Algoutility")
+const num = require("readline-sync")
+console.log("Please enter range of Prime Numbers to be calculated: ");
+var number = num.questionInt()
+var arr = input.data.primerange(number)        //calling a function to get prime numbers and storing in an array
+console.log("Prime Numbers are: " + JSON.stringify(arr));       //Printing the array converting into the string
+arr = arr.toString()        //converting an array into string to use string functions
+arr = arr.split(",")        // splitting an array by ","
+var palindromearray = []       // an array to store palindrome numbers from prime number array
+/*
+* traversing an array from 0 to length
+* And each element is checked whether it is a palindrome 
+* A function isPalindrome is called and an array is passed as a parameter
+*/
+for (i = 0; i <= arr.length - 1; i++) {
+    var palindromearray = input.data.isPalindrome(arr[i])       
+}
+console.log("Palindrome Numbers are: " + JSON.stringify(palindromearray)) //displaying palindrome numbers from array
+console.log(isAnagram(palindromearray));        //palindrome array is passed to anagram function to get anagram elements from array
+/*
+* Function to check whether the array has anagram numbers
+*/
 function isAnagram(palindromearray) {
     var i ; var j; var flag = 0;
-    for (i = 0; i < palindromearray.length; i++) {
-        for (j = i+1; j < palindromearray.length; j++) {
-            for(k= i[0]; k < i.length; k++){
-                for (l = j[0]; l < j.length; l++){
-                    if (arr[i] == arr1[j]) {
+    for (i = 0; i < palindromearray.length; i++) {      //In this loop "i" is pointing to the 1st element of array
+        for (j = i+1; j < palindromearray.length; j++) {    //"j" is traversing from 1st position to the last
+            for(k= i[0]; k < i.length; k++){        //Every elements length is calculated to check sequence
+                for (l = j[0]; l < j.length; l++){      //this loop will traverse to each element to compare
+                    if (arr[i] == arr1[j]) {        //check whether elements are same
                         flag = 1
                     }
                 }
@@ -25,9 +41,9 @@ function isAnagram(palindromearray) {
         }
     }
     if (flag == 1){
-        return "Is Anagram"             //after checking both strings if flag = 1, then it is an Anagram
+        return (i + j + "Is Anagram")             //after checking both strings if flag = 1, then it is an Anagram
     }else{
-        return "Is Not Anagram"
+        return "No Anagrams found"
     }
 }
 

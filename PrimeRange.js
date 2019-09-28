@@ -1,8 +1,21 @@
-const input = require("./Algoutility")
-var num = input.data.input()
+/*2. Take a range of 0 - 1000 Numbers and find the Prime numbers in that range.
+
+Author Name : Priyanka Gandhi
+Date : 26/09/2019
+*/
+
+const input = require("./Algoutility")  //accessing primeRange function from Algoutility
+console.log("Enter a range to find Prime Numbers: ");
+var range = input.data.input()      //Taking user input for range
 // console.log(num)
 
-var arr = input.data.primerange(num)
+var array = input.data.primerange(range) //calling primeRange function to find prime numbers and storing in an array
+
+console.log("Prime Numbers: " + JSON.stringify(array)) //Displaying output
+
+
+
+
 
 /*function primeRange(n){
     //var i = 2;
@@ -28,5 +41,3 @@ var arr = input.data.primerange(num)
     return arr;
 }
 */
-
-console.log("Prime Numbers: " + JSON.stringify(arr))

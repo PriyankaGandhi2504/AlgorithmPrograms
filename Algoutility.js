@@ -42,14 +42,14 @@ methods.primerange = function (n) {
     return arr;
 }
 
+
+
 /* 
 * Function to check whether the number is Palindrome or not
 * An Array is passed to the function as an argument
 * Each element will be reversed and checked
 * If both elements are same function will return an array with all Palindrome numbers
 */
-
-
 methods.isPalindrome = function (n) {
     var i; var j;
     var palindromearray = []
@@ -73,11 +73,11 @@ methods.isPalindrome = function (n) {
             console.log(n1)
             palindromearray.push(n1)
         }
-
     }
     return palindromearray
-
 }
+
+
 
 /*
 * Bubble sort method
@@ -95,6 +95,9 @@ methods.bubbleSort = function (array) {
     console.log("Sorted Array: " + array);
 }
 
+
+
+
 /*
 * Function to perform insertion sort
 */
@@ -111,6 +114,9 @@ methods.insertionSort = function(array){
     console.log("Sorted Array: " + array);
 }
 
+
+
+
 /*
 *Function to stop calculate time using Stop watch
 */
@@ -123,10 +129,10 @@ methods.stopwatch = function () {
 }
 
 
+
 /*
 *  Method to search a word from string
 */
-
 methods.searchWord = function (string, keyword) {
     var count = 0; var singleword = [];
     singleword = string.split(" ")
@@ -144,6 +150,8 @@ methods.searchWord = function (string, keyword) {
         }
 }
 
+
+
 /*
 *  Method to search a number from series
 */
@@ -160,6 +168,35 @@ methods.searchNumber = function(arrayelements, keyword){
         return "Keyword not found"
     }
 }
+
+
+
+/*
+* Function to convert Temperature
+*/
+methods.temperatureConversion = function(option){
+    const number = require("readline-sync")
+    if (option > 0 && option < 3) {
+        if (option == 1) {
+            console.log("Please enter temperature in Celsius : ");
+            var temperatureincelsius = number.questionInt()
+            //(°C × 9/5) + 32 = °F
+            var fahrenheit = (temperatureincelsius * 9 / 5) + 32
+            console.log(temperatureincelsius + "°C in Fahrenheit is : " + fahrenheit);
+        } else {
+            console.log("Please enter temperature in Fahrenheit : ");
+            var temperatureinfahrenheit = number.questionInt()
+            //(°F − 32) x 5/9 = °C
+            var celsius = (temperatureinfahrenheit - 32) * 5 / 9
+            console.log(temperatureinfahrenheit + "°F in Celsius is : " + celsius);
+        }
+    }else{
+        return "Invalid Input"
+    }
+}
+
+
+
 
 
 /*
@@ -182,11 +219,6 @@ for(i = 0; i <= arr.length-1; i++){
 return PalindromeArray;
 }
  */
-
-
-
-
-
 
 /*
 methods.isAnagram = function(s1, s2)

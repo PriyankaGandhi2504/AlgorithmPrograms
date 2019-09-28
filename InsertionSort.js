@@ -1,6 +1,17 @@
-const input = require("./Algoutility")
+/*7. Insertion Sort
+a. Desc -> Reads in strings from standard input and prints them in sorted order.
+Uses insertion sort.
+b. I/P -> read in the list words
+c. Logic -> Use Insertion Sort to sort the words in the String array
+d. O/P -> Print the Sorted List
+
+Author Name : Priyanka Gandhi
+Date : 27/09/2019
+*/
+
+const input = require("./Algoutility")      //accessing insertionSort function form Algoutility
 var array = []; var i;
-console.log(acceptUserInputs());
+console.log(acceptUserInputs());        //calling a function take user input for number of elements and array elements
 
 function acceptUserInputs() {
 
@@ -17,4 +28,4 @@ function acceptUserInputs() {
     }
     console.log("Original Array: " + array);
 }
-console.log(input.data.insertionSort(array))
+console.log(input.data.insertionSort(array)) // calling a function to perform sorting and returning output

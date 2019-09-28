@@ -1,8 +1,25 @@
+/*4. To the Utility Class write the following static methods
+a. Desc -> Create Utility Class having following static methods
+binarySearch method for integer
+binarySearch method for String
+insertionSort method for integer
+insertionSort method for String
+bubbleSort method for integer
+bubbleSort method for String
+b. I/P -> Write main function to call the utility function
+c. Logic -> Check using Stopwatch the Elapsed Time for every method call
+d. O/P -> Output the Search and Sorted List. More importantly print elapsed time
+performance in descending order 
+
+Author Name : Priyanka Gandhi
+Date : 27/09/2019
+*/
+
 const input = require("./Algoutility")      //importing algoutility to access functions
 var number = require("readline-sync")       // importing to restrict type of data from user
 var array = []
 var elapsetimearray = []
-
+console.log(displayOptions());
 /*
 * Entering data from users and storing in an Array
 */
@@ -28,20 +45,25 @@ function enterArrayElements(option) {
         }
         console.log("Original Array: " + array);
     }
-
+}
+/*
+* Displaying options to user and taking user input to perform particular operation
+*/
+function displayOptions() {
+    console.log("Select number to perform particular operation: ");
+    console.log("1. binarySearch for Integer");
+    console.log("2. binarySearch for String");
+    console.log("3. insertionSort for Integer");
+    console.log("4. insertionSort for String");
+    console.log("5. bubbleSort for Integer");
+    console.log("6. bubbleSort for String");
+    var operation = number.questionInt()
+    console.log(performOperation(operation));
 }
 
-console.log("Select number to perform particular operation: ");
-console.log("1. binarySearch for Integer");
-console.log("2. binarySearch for String");
-console.log("3. insertionSort for Integer");
-console.log("4. insertionSort for String");
-console.log("5. bubbleSort for Integer");
-console.log("6. bubbleSort for String");
-var operation = number.questionInt()
-console.log(performOperation(operation));
-
-
+/*
+* Function to check user input and performing operation according to case
+*/
 function performOperation(option) {
     if (option > 0 && option < 7) {
         switch (option) {
@@ -149,6 +171,7 @@ function inputToStartTime() {
 
 function continueOrExit(continueorexit) {
     if (continueorexit == 1) {
+        console.log(displayOptions());
         console.log("Please enter the number of operation you wish to perform: ");
         var num = number.questionInt()
         console.log(performOperation(num));

@@ -1,8 +1,17 @@
-const input = require("./Algoutility")
-var number = require("readline-sync")
+/*8. Bubble Sort
+a. Desc -> Reads in integers prints them in sorted order using Bubble Sort
+b. I/P -> read in the list ints
+c. O/P -> Print the Sorted List
+
+Author Name : Priyanka Gandhi
+Date : 27/09/2019
+*/
+
+const input = require("./Algoutility")      //to access bubbleSort function from Algoutility
+var number = require("readline-sync")       //to access questionInt method to restrict input to Integer
 var array = []; var i ;
 console.log("Enter Number of Elements");
-var numberofelements = input.data.input()
+var numberofelements = number.questionInt()     //taking number of elements in array from user
 console.log("Enter Array Elements");
 /*
 * Taking User Input for array elements
